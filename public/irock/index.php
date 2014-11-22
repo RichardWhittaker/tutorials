@@ -40,11 +40,8 @@
         document.getElementById("rockImg").src = "rock_happy.png";
         setTimeout("document.getElementById('rockImg').src = 'rock.png';", 5 * 60 * 1000);
       }
-
-      
     </script>
   </head>
-
   <body onload="resizeRock(); greetUser();">
     <div style="margin-top:100px; text-align:center">
       <img id="rockImg" src="rock.png" alt="iRock" style="cursor:pointer" onclick="touchRock();" />
