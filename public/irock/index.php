@@ -10,7 +10,9 @@
       }
 
       function greetUser() {
+        if (navigator.cookieEnabled) {
         userName = readCookie("irock_username");
+        }
         if (userName) {
             alert("Hello" + userName + ", I missed you.");
         }
@@ -27,7 +29,12 @@
           userName = prompt("What is your name?", "Enter your name here.");
           if (userName){
             alert("It is good to meet you, " + userName + ".");
+            if (navigator.cookieEnabled) {
             writeCookie("irock_username", userName, 5 *365);
+            }
+            else{
+              alert("Sorry cookies aren't supported/enabled in your browser. I won't remeber you later.")
+            }
           }
         }
         document.getElementById("rockImg").src = "rock_happy.png";
